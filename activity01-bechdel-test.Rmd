@@ -1,6 +1,6 @@
 ---
 title: "Bechdel Test"
-author: "Name"
+author: "Logan"
 output: github_document
 ---
 
@@ -49,7 +49,7 @@ bechdel90_13
 
 How many movies are there?
 
-**Response**: 
+**Response**: 1794
 
 
 The financial variables that we will focus on are:
@@ -74,7 +74,7 @@ bechdel90_13 %>%
 
 What patterns do you notice?
 
-**Response**: 
+**Response**: It looks like movies that fail the test have higher budgets and tend to have a higher gross revenue.
 
 
 Next, we will take a look at how median budget and median gross vary by a more granular (detailed) indicator of the Bechdel test result (where `ok` = passes test, `dubious`, `men` = women only talk about men, `notalk` = women don't talk to each other, `nowomen` = fewer than two women).
@@ -89,7 +89,7 @@ bechdel90_13 %>%
 
 What patterns do you notice?
 
-**Response**: 
+**Response**: It looks like the ok rating gets the least budget and least gross revenue.
 
 
 In order to evaluate how return on investment varies among movies that pass and fail the Bechdel test, we first create a new variable called `roi` as the ratio of the gross to budget.
@@ -98,7 +98,7 @@ Update the missing variable (i.e., replace the `___` after the minus sign with t
 
 ```{r}
 bechdel90_13 <- bechdel90_13 %>%
-  mutate(roi = (intgross_2013 + domgross_2013 - ___) / budget_2013)
+  mutate(roi = (intgross_2013 + domgross_2013 - budget_2013) / budget_2013)
 ```
 
 Now we can see which movies have the highest return on investment.
@@ -135,7 +135,7 @@ ggplot(data = bechdel90_13, mapping = aes(x = clean_test, y = roi, color = binar
 
 What patterns do you notice?
 
-**Response**:
+**Response**: Some patterns I notice include the ok variable having a much larger IQR than the other variables. It also has no outliers, unlike the others. Ok movies have a higher median return on investment, while dubious may be the most safe, as it has the highest Q1.
 
 
 Go back to the `README` document
